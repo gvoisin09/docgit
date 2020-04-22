@@ -1,0 +1,159 @@
+---
+title: "Chacon Straub Pro Git Extraits"
+author: "Gabriel Voisin"
+date : "`r format(Sys.time(), '%d/%m/%Y')`"
+output: 
+  html_document:
+    toc: true
+    toc_float: TRUE
+    toc_depth: 6
+    self_contained: yes
+    number_section: true
+---
+
+Source : https://git-scm.com/book/fr/v2
+
+# Démarrrage
+
+## Un VCS c'est quoi ?
+
+Un VCS (version Control System) permet d'enregistrer les différentes étapes d'un projet.
+
+## Histoire
+
+Git a été construit en 2005 lors de la collaboration du noyau de Linux avec les objectifs :
+
+* vitesse
+* simplicité
+* support de développements non linéaires permettant de multiplier les branches parallèles
+* être distribué
+* pouvant permettre de gérer de très grands projets comme le noyau linux
+
+## Rudiments de git
+
+L'information n'est pas concue comme une liste de fichiers et de modifications, mais comme un mini système de fichiers. A chaque sauvegarde c'est l'espace de travail qui est pris en compte. Si le fichier n'est pas modifié seule la référence est enregistrée. S'il est modifié, c'est la modification qui est enregistrée.
+
+Presque toutes les opérations sont locales pour être rapide. Il est possible de travailler et de poursuivre les modifications sans connexion. Cela est possible grâce aux clés SHA qui ressemble à `24b9da6552252987aa493b52f8696cd6d3b00373` qui sont stockées dans la base de données.
+
+Généralement GIT ne fait qu'ajouter des données => cela permet aux actions d'être réversibles.
+
+3 états pour les fichiers
+
+* Validé : Les données sont stockées dans la base de données locales
+
+* Modifié : Les modifications sont seulement prises en compte
+
+* Indexé : Les instantannés de fichiers sont pris en compte dans la zône d'index. Lorsqu'on valide, les fichiers basculent dans la base de données.
+
+## Ligne de commande
+
+Elle permet de lancer toutes les commandes.
+
+## Installation
+
+* Sous ubuntu `sudo apt-get install git-all`
+* Pour savoir la version `git --version`
+* Pour widows : https://git-scm.com/download/win et https://desktop.github.com/
+
+
+## Paramétrage de la première utilisation
+
+* Renseigner le nom et l'adresse mail
+```
+git config --global user.name "<nom-utilisateur>"
+git config --global user.email "<adresse@mail>"
+```
+
+* Pour l'éditeur de texte `git config --global core.editor <nomediteur>`
+
+* Pour vérifier les options `git config --list`
+
+* Pour vérifier la valeur d'un paramètre `git config <parametre>`
+
+## Aide
+
+Il y a 3 possibilités
+```
+git help <commande>
+git <commande> --help
+man git <commande>
+```
+Ex pour demander de l'aide sur les commandes de configuration : `git help config`
+
+
+# Bases de git
+
+## Démarrer un dépôt git
+
+2 manières de commencer un dépot :
+
+1. Initialiser un dépot git dans un répertoire existant
+
+Il suffit d'aller dans le répertoire avec `cd` et de saisir `git init`
+
+Si le répertoire contient des fichiers
+```
+git add *.c
+git add LICENSE
+git commit -m 'Projet initial'
+```
+2. Cloner un dépôt existant
+
+Si on veut clôner la dépôt libgit2 `git clone https://github.com/libgit2/libgit2`
+
+## Enregistrer les modifications dans un dépôt
+
+1. L'outil principal pour déterminer l'état des fichiers est `git status`. Il indique si la branche a bien été mise à jour et s'il existe des fichiers non suivis.
+
+2. Si on veut ajouter une fichier `git add <nom-fichier>`
+
+3. Si on veut indexer des fichiers modifiés `git add <nom-fichier>`
+ 
+4. Version courte `git status -s` où 
+
+===> A continuer
+
+* `M` Fichiers modifiés
+* `A` Fichiers ajoutés
+* `??`Fichiers non suivis
+
+
+## Visualiser l'historique des validations
+
+## Annuler des actions
+
+## Travailler avec des dépôts distants
+
+## Etiquetage
+
+## Alias git
+
+# Les branches de git
+
+## Les branches en bref
+
+## Branches et fusions : les bases
+
+## Gestion des branches
+
+## Travailler avec les branches
+
+## Branches de suivi à distance
+
+## Rebaser
+
+# Git sur le serveur
+
+# Git distribué
+
+# Github
+
+## Configuration et paramétrage du compte
+
+## Contribution à un projet
+
+## Maintenant d'un projet
+
+## Gestion d'un regroupement
+
+## Ecritures des scripts pour git
