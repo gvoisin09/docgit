@@ -1,0 +1,120 @@
+
+* <a href='https://happygitwithr.com/'>Bryan, STAT545, Hester Happy Git and GitHub for Users</a>
+* <a href='https://guides.github.com/activities/hello-world/'>Guide Github sur le site</a>
+* <a href='https://stat545.com/'>Stat545 </a>
+
+#  Configurer git
+
+
+* <a href='http://swcarpentry.github.io/git-novice/02-setup/index.html'>Memo de configuration de git</a>
+```
+git config --global user.name 'gvoisin09'
+git config --global user.email 'gvoisin09@gmail.com'
+git config --global --list
+```
+
+Si on veut utiliser emacs ou gedit
+
+```
+git config --global core.editor "gedit --wait --new-window"
+
+```
+
+#  Installer un client git
+
+* Rstudio propose un client git sommaire via le volet git. 
+* <a href='https://www.gitkraken.com/?utm_expid=.W2nHbF0ARIqaOuS7QxW-pA.0&utm_referrer=https%3A%2F%2Fhappygitwithr.com%2Fgit-client.html'>GitKraken</a> (sur Windows et linux)
+* <a href='https://www.sourcetreeapp.com/'>SourceTree </a>(Windows)
+* GitHub Dekstop (Windows)
+* <a href='https://git-scm.com/downloads/guis'>Liste des clients git</a>
+
+
+#  Se connecter à github
+
+* Se connecter sur le site github : https://github.com/ avec email et mot de passe `gvgithub09`
+* Cliquer sur `New`
+* Nom du referentiel
+* Description : 'Statistiques pour les élections municipales de Marseille du 15 mars 2020 1° secteur 1° tour'
+* Copier l'URL du référentiel (https://github.com/gvoisin09/202003municipales.git)
+* Ouvrir un terminal interne
+```
+Outils > Terminal : shell interne 
+
+```
+#  Clôner le dépôt sur l'ordinateur local
+```
+git clone https://github.com/gvoisin09/202003municipales.git
+```
+
+# Ajouter une ligne à README
+
+```
+echo "changement que je veux effectuer" >> README.md
+```
+
+# Ajouter le changement
+
+```
+git add -A
+git commit -m "Insertion des fichiers depuis mon ordinateur local"
+git push
+```
+Git requiert un commentaire (git commit -m) pour chaque modification 
+
+# Nettoyage
+
+Sur l'ordinateur local
+```
+cd ... # Pour aller jusqu'au répertoire de travail
+rm -rf repertoire
+```
+Sur github
+```
+Paramètres > Supprimer le référentiel
+```
+# Savoir quel est le référentiel de test
+
+```
+git remote -v
+```
+Envoi des pointeurs fetch et push
+
+# Déterminer la branche
+
+```
+git branc -vv
+```
+# Avoir la version 
+
+```
+git --version
+```
+# Pour conserver l'identifiant et le mot de passe
+
+```
+git config --global credential.helper 'cache --timeout=10000000'
+```
+Pour stocker le mot de passe pendant 10 millions de secondes soit environ 16 semaines ou un semestre
+
+# Modifier un fichier référention local
+
+Effectuer les modifications
+```
+echo "adding a line" >> README.md
+git add -A
+git commit -m "A commit from my local computer"
+```
+Puis envoyer
+```
+git push -u origin master
+```
+Si le mot de passe est demandé : 
+```
+motpasse
+git push
+```
+On doit recueillir le message `Everything up-to-date`
+
+# Clé SSH
+
+Continuer chapitre 11

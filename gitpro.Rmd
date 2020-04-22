@@ -105,20 +105,39 @@ Si on veut clôner la dépôt libgit2 `git clone https://github.com/libgit2/libg
 
 1. L'outil principal pour déterminer l'état des fichiers est `git status`. Il indique si la branche a bien été mise à jour et s'il existe des fichiers non suivis.
 
-2. Si on veut ajouter une fichier `git add <nom-fichier>`
+2. Si on veut ajouter une fichier `git add <nom-fichier>` suivi de `gitt commit -m "modification "` mais qui peut être simplifié (7)
 
 3. Si on veut indexer des fichiers modifiés `git add <nom-fichier>`
  
-4. Version courte `git status -s` où 
+4. Pour avoir un tableau de bord abrégé  `git status -s` où La colonne de gauche indique l'état de l'index et celle de droite l'état du fichier
 
-===> A continuer
-
-* `M` Fichiers modifiés
-* `A` Fichiers ajoutés
+* `.M` Fichiers indexés mais modification non ajout
+* `A.` Fichiers indexés sans modification
 * `??`Fichiers non suivis
 
+5. Pour exclure du suivi certains fichiers comme les fichiers binaires on constuire un fichier caché gitignore https://github.com/github/gitignore
+```
+cat .gitignore
+*.html
+```
+
+6. Pour visualiser ce qui a été modifié mais pas encore indexé :  `git diff --cached`
+
+7. Pour indexer et valider les modifications  `gitt commit -a -m "Indications sur la mise à jour`
+
+8. Pour effacer un fichier de l'indexation mais qui reste dans le projet local `git rm --cached fichier_a_supprimer`
+
+9. Pour renommer un fichier `git mv ancien_nom nouveau_nom`
 
 ## Visualiser l'historique des validations
+
+Cela permet de faire l'historique des commits en utilisant l'outil `git log`. Les commits les plus récents apparaissent en premier. 
+
+Si l'on veut faire des statistiques `git log --stat` 
+
+Si l'on veut faire l'historique depuis un certain délai `git log --since=2.weeks` ou `git log --since="2008-01-05" --before="2009-01-01"`
+
+Sur l'ensemble des options : https://git-scm.com/book/fr/v2/Les-bases-de-Git-Visualiser-l%E2%80%99historique-des-validations#limit_options
 
 ## Annuler des actions
 
