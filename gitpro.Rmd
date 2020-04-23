@@ -141,7 +141,51 @@ Sur l'ensemble des options : https://git-scm.com/book/fr/v2/Les-bases-de-Git-Vis
 
 ## Annuler des actions
 
+* Si on se trompe dans le message de validation, pour pouvoir le reprendre : `git commit --amend`
+* Pour pouvoir désindexer un fichier `git reset HEAD <fichier>`
+* Pour annuler des modifications `git checkout --<fichier>`. Plutôt que d'annuler des modifications il est recommandé de créer une branche annexe temporaire 
+
 ## Travailler avec des dépôts distants
+
+### Afficher les dépots distants
+
+* On utilise `git remote`
+* Si on veut lister les url `git remote -v`
+
+### Ajouter un dépôt distants
+
+Principe : `git remote add [nomcourt] [url]`
+
+En allant sur le site : https://github.com/new
+
+Ex :Si je veux faire le dépôt distant du projet docgit
+`git remote add docgit https://githubcom/gvoisin09/docgit`. Je vais vérifier s'il est bien pris en compte en faisant `gitremote`
+
+On peut ensuite utiliser le nom court sans URL complète
+
+### Récupérer les dépôts distants
+
+Ppe : `git fetch [nomcourt]`
+
+Cela permet de récupérer toutes les branches contenues dans le dépôt et de pouvoir les fusionner ou les inspecter. La fusion n'est pas automatique.
+
+### Pousser son projet en ligne
+
+Ppe : `git push [nomcourt] [branche]`
+
+Ex : Si on veut placer la branche master dans gitdoc : `git push gitdoc master`.
+
+Condition : Avoir des droit d'accès en écriture et qu'aucune personne n'ait fait des modifications.
+
+### Inspecter un dépôt distant
+
+Avec `git remote show [url]` 
+
+### Retirer et renommer des dépôts distants
+
+* Pour renommer : `git remote rename [ancien] [nouveau]`
+
+* Pour retirer : `git remote rm [nomcourt]`
 
 ## Etiquetage
 
