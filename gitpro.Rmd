@@ -189,13 +189,48 @@ Avec `git remote show [url]`
 
 ## Etiquetage
 
+* lister les étiquettes  `git tag `
+	Pour étiquettes correspondant à un motif particulier: `git tag '<motif>'`
+	
+* Créer des étiquettes : `git tag -a <etiquette> -m <commentaire>`
+
+* Visualiser : `git show <etiquette>`
+
+* Partager les étiquettes : `git push origin <etiquette>` ou `git push origin --tags`
+   ! Push explicite à effectuer
+   
 ## Alias git
+
+Possibilité de définir pour chaque commande :`git config --alias.last 'log -l HEAD'` => Appel `git last` 
 
 # Les branches de git
 
-## Les branches en bref
+* Pour avoir la version d'origine (master) et les versions variantes (nom de branche)
 
-## Branches et fusions : les bases
+* Création `git branch <nom_branche>`
+
+* Sur quelle branche est-on ? Pointeur `HEAD` => `git log --online --decorate`
+
+* Basculer entre branches `git checkout <nom_branche>` => HEAD pointe vers cette branche. Si on fait une validation par git commit -a -m cela concerne cette branche.
+
+* Revenir à la branche maître `git checkout master`
+
+* Afficher l'historique de tous les commits `git log --oneline --decorate --graph --all`
+
+## Fusions
+
+On travaille sur la programmation d'un site. On crée un nouvel article en cours (iss53). On commence à travailler sur cette branche. Après avoir testé l'ajout on peut l'intégrer à branche master. 
+
+```
+git branch iss53
+git chekout iss53
+git commit -a -m "correctif sur iss53"
+git checkout master
+git merge correctif
+```	  
+
+Il peut y avoir des conflits de fusion 
+
 
 ## Gestion des branches
 
