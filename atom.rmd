@@ -181,13 +181,36 @@ Tout projet est livré avec une intégration de base [Git](https://git-scm.com/)
 
 ### Initialiser
 
-Pour créer un repo git
-Pour cloner un repo
+Pour créer un repo git `Create a new GitHub repository`
+Pour cloner un repo `Clone an existing GitHub repository` + nom du dépôt et repertoire
 
+### Nouvelle branche
 
+Dans la barre d'état clic sur l’icône de branche ce qui permet de créer une nouvelle branche en lui donnant un nom ou en changeant de branche
 
+### Modifications et annulation
+
+Possibilités de sélectionner et d'annuler les Modifications
+
+### Vérifier les modifications
+
+Sur `Commit preview`
+
+### Faire les Commit
+
+Entrer le message et faire le Commit
+
+### Publier et pusher
+
+Sur le bouton `Publish`
+
+### Pour extraire les Modifications
+
+Sur le bouton `Pull`
 
 ## Ecrire dans Atome
+
+***>
 
 ## Personnalisation de bases
 
