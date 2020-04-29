@@ -1,0 +1,194 @@
+# Prise en main
+
+## Les bases
+
+### Palette de commande
+
+ `Ctrl+Shift+P` Donne accès à toutes les commandes d'Atome et les raccourcis d'écrans
+
+### Paramètres et préférences :
+
+#### Appel de l'éditeur des paramètres de présentation
+
+ soit `Edit > Preferences` ou `Ctrl+,`
+
+### Changer le thême
+
+Variantes sombres ou claires du thème de bases
+8 thèmes différents [Liste des thèmes](https://atom.io/themes)
+
+### Réglage des paramètres
+
+* `Tab Length` pour le nombre d'espace
+* `soft_wrap` retour automatique à la ligne
+
+### Ouverture d'un fichier
+
+`File > Open File` ou `Ctrl+O` ou à partir du shell `atom ... ` Les options du shell sont puissantes :on peut ouvrir un fichier en spécifiant un numéro de ligne ou en recherchant dans un fichier le numéro de ligne .
+
+### Modification et enregistrement
+
+Pas de mode spécial de modification sauf possibilité de rajouter un package.
+Pour enregistrer `File Save as ` ou `Ctrl+Shift+S` ou `File Save` et `Ctrl+S`
+
+### Ouverture de répertoires
+
+Un répertoire ou un projet contient un ensemble de fichiers.
+
+Pour les ouvrir `File Open Folder` , `File Add Folder` ou `Ctrl+Shif+A` ou par le folder `atom ./rep1 ./rep2 ` pour ouvrir simultanément plusieurs répertoires.
+
+Arborescence des fichiers dans la fenêtre latérale. On peut ouvrir, renommer, supprimer et créer de nouveaux fichiers à partir de cette arborescence.
+Pour masquer l'arborescence `Ctrl+\`
+
+### Fuzy Finder (Fenêtre de recherche)
+
+`Ctrl+T` ou `Ctrl+P` permet de rechercher n'importe quel fichier en tapant des parties du chemin
+
+`Ctrl+B` recherche dans tous les fichiers ouverts
+
+`Crtl+Shift+B` Fichiers nouveaux ou modifiés depuis le dernier commit git
+
+# Utilisation d'Atom
+
+## Packages Atom
+
+Atom est un système de packages sur un noyau basique : écran de bienvenue, vérificateur d'orthographe, thèmes, fuzzy finder...
+
+Pour installer un package : `Ctrl+l > Install > nom du package`
+
+[liste des packages](https://atom.io/packages) Tous les packages ont un bouton install. Voir aussi paramètres . Ils pourront être mis à jour
+
+Shell `apm install <package name>` pour installer la dernière version. On peut spécifier une version spécifique après le nom avec `@<package_version>` On peut rechercher par thême un package  ex `apm search coffee` ou avoir plus d'information `apm view build-coffee`
+
+## Se déplacer
+
+### Raccourcis clavier
+
+* `Ctrl+Left` En début de mot
+* `Ctrl+Right` A la fin de mort
+* `Home` Vers le premier caractère de la ligne actuelle
+* `End` Aller en fin de ligne
+* `Ctrl+Home` Haut du fichiers
+* `Ctrl+End` Fin de fichiers
+* `Ctrl+G` Indiquer le n° de ligne: n° de colonne
+
+Possible de créer aussi des raccourcis claviers en ajoutant une entrée dans `keymap.cson` que l'on ouvre avec `Edit > Keymap`
+
+### Tags et symboles
+
+* https://docs.ctags.io/en/latest/
+* https://github.com/atom/symbols-view
+
+### Signets
+
+Définir un signet `Ctrl+Shift+F2`
+
+Pour se déplacer entre signet `F2`
+
+Pour avoir une liste des signets `Ctrl+F2`
+
+## Sélection
+
+Raccourcis claviers
+
+* `Shift+Up`   Sélection vers le Haut
+* `Shift+Down` Sélection vers le base
+* `Shift+Left` Sélection du caractère précédent
+* `Ctrl+Shift+Left` Sélection au début de mot
+* `Ctrl+Shift+Right` Sélection jusqu'à la fin du mot
+* `Shift+End` Sélection jusqu'à la fin de ligne
+* `Shitf+Home` Sélection du 1° caractère de ligne
+* `Ctrl+Shitf+Home` Sélection en haut du fichier
+* `Ctrl+A` Sélection l'intégralité du Fichiers
+* `Ctrl+L` Sélection de toute la ligne
+
+## Modification et suppression
+
+### Raccourcis
+
+* `Ctrl+J` Joindre la ligne suivante à la ligne actuelle
+* `Ctrl+Shift+K` Supprimer la ligne actuelle
+* `Ctrl+Backspace` Supprimer au début du mort
+* `Ctrl+Delete` Supprimer à la fin du mot
+
+### Curseurs et sélections multiples
+
+* `Alt+F3` Sélectionner tous les mots identiques au mot sélectionné
+* `Alt+D` Sélectionner le mot suivant dans le document qui est le même que le mot actuellement sélectionné
+
+### Espaces blancs
+
+`atom/whitespace` pour convertir les espaces en tabulations ou convertir les tabulations en espace. Par défaut, lors de l'enregistrement, suppression des espaces de fin de fichier.
+
+### saisie semi-automatique
+
+pour `()`, `[]`, `""`, `{}`
+* `Ctrl+M` Accéder au crochet correspondant
+* `Alt+Ctrl+,` Sélectionner tout le texte entre les crochets actuels
+* `Alt+Ctrl+.` Fermer la balise XML/HTML actuelle
+
+### Codage
+
+Par défaut uft-8 .
+
+## Trouver et remplacer
+
+* `Ctrl+F` Rechercher dans le tampon
+* `Ctrl+Shift+F` Rechercher dans l'ensemble du projet
+* `F3` Recherche suivante
+
+Plusieurs options dans le panneau : sensibilité à la casse, expressions régulières, sélections, mots entiers
+Expressions régulières javascript https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+## Snippets
+
+après quelques lettres `tab` avec la liste des commandes correspondantes . Peut donner la structure d'entête d'un fichier html
+
+Possible d'écrire ses propres modèles
+
+* https://github.com/atom/snippets
+* https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson
+
+
+## Pliage du code
+
+Pour avoir la structure du fichier code pour les blocs ou les boucles
+
+* Avec un clic sur les flèches ou `Alt+Ctrl+[` ou `Alt+Ctrl+]`
+* Pour tout plier `Alt+Ctrl+Shift+[`
+* Pour tout délier `Alt+Ctrl+Shift+]`
+* Pour plier une section : la sélection et `Alt+Ctrl+F`
+
+
+## Volets
+
+Pour diviser `Ctrl+K` `Up∕Down∕Left∕Right`. On peut basculer entre avec ces commandes . La direction est la direction vers laquelle le focus va se déplacer.
+
+Pour fermer un volet `Ctrl+W`
+
+## Type de fichiers
+
+Ils sont définis par Atom. A défaut ce sont des fichiers txt. On peut modifier le type en appelant la fenêtre `Ctrl+Shift+L` .[Package gramar-selector](https://github.com/atom/atom/tree/master/packages/grammar-selector)
+
+## Git et Github
+
+Aller dans les panneaux Git et github
+
+### Accéder aux panneaux
+
+Pour le panneau git `Ctrl+9`
+Tout projet est livré avec une intégration de base [Git](https://git-scm.com/) et [Github](https://github.com/) intégrée.
+
+### Initialiser
+
+Pour créer un repo git
+Pour cloner un repo
+
+
+
+
+## Ecrire dans Atome
+
+## Personnalisation de bases
+
+# Piratage d'Atom
